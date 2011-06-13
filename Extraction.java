@@ -20,7 +20,7 @@ public class Extraction {
 	}
 	
 	/**
-	 * ƒeƒLƒXƒg‚©‚çB‚à‚µ‚­‚Íb‚Ån‚Ü‚é’PŒê‚ğƒvƒŠƒ“ƒg‚·‚é
+	 * ãƒ†ã‚­ã‚¹ãƒˆã‹ã‚‰Bã‚‚ã—ãã¯bã§å§‹ã¾ã‚‹å˜èªã‚’ãƒ—ãƒªãƒ³ãƒˆã™ã‚‹
 	 * @param input
 	 */
 	public static void outputWordStartB ( String input ) {
@@ -39,8 +39,8 @@ public class Extraction {
 	} 
 	
 	/**
-	 *ƒeƒLƒXƒg‚©‚çB‚à‚µ‚­‚Íb‚Ån‚Ü‚é’PŒê‚ğƒvƒŠƒ“ƒg‚·‚é
-	 * Pattern‚ÆMatcher‚ğg‚¢‚Ü‚·B
+	 *ãƒ†ã‚­ã‚¹ãƒˆã‹ã‚‰Bã‚‚ã—ãã¯bã§å§‹ã¾ã‚‹å˜èªã‚’ãƒ—ãƒªãƒ³ãƒˆã™ã‚‹
+	 * Patternã¨Matcherã‚’ä½¿ã„ã¾ã™ã€‚
 	 * @param input
 	 * @return 
 	 */
@@ -59,7 +59,7 @@ public class Extraction {
 	} 
 	
 	/**
-	 * List‚Ì’l‚ğƒJƒ“ƒ}‚Å‹æØ‚Á‚Ä•À‚×‚é
+	 * Listã®å€¤ã‚’ã‚«ãƒ³ãƒã§åŒºåˆ‡ã£ã¦ä¸¦ã¹ã‚‹
 	 * @param list
 	 */
 	public static void printList ( List<String> list ) {
