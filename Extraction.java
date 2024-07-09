@@ -3,75 +3,52 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class Extraction {
 
-	/**
-	 * @author Jeongwoo Lee
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		String input = "Recombinable business logic in a Boolean fashion";
-
-		outputWordStartB(input);
-		//printList( getWordsStartB(input) );
-
-	}
-	
-	/**
-	 * テキストからBもしくはbで始まる単語をプリントする
-	 * @param input
-	 */
-	public static void outputWordStartB ( String input ) {
-		String[] words = input.split("\\s");
-		boolean isFirst = true;
-		for ( String word : words ) {
-		    if ( word.startsWith("b")||word.startsWith("B") ) {
-				if(isFirst){
-					System.out.print( word );
-					isFirst = false;
-				}else{
-					System.out.print( "," + word );
-				}		    	
-		    }
-		}
-	} 
-	
-	/**
-	 *テキストからBもしくはbで始まる単語をプリントする
-	 * PatternとMatcherを使います。
-	 * @param input
-	 * @return 
-	 */
-	public static List<String> getWordsStartB ( String input ) {
-		String[] words = input.split("\\s");
-		Pattern firstB = Pattern.compile( "\\A[Bb]" );
-
-		List<String> results = new ArrayList<String>();
-
-		for ( String word : words ) {
-			Matcher matcher = firstB.matcher(word);
-		    boolean blnMatch= matcher.find();
-		    if ( blnMatch ) results.add(word);
-		}
-		return results;
-	} 
-	
-	/**
-	 * Listの値をカンマで区切って並べる
-	 * @param list
-	 */
-	public static void printList ( List<String> list ) {
-		boolean isFirst = true;
-		for ( String value : list ) {
-			if(isFirst){
-				System.out.print( value );
-				isFirst = false;
-			}else{
-				System.out.print( "," + value );
-			}
-		}
-	} 
-	
+    /**
+     * @author Jeongwoo Lee
+     * @param args
+     */
+    public static void main(String[] args) {
+        String input = "Recombinable business logic in a Boolean fashion";
+        outputWordsStartingWithB(input);
+        // printList(getWordsStartingWithB(input));
+    }
+    
+    /**
+     * テキストからBもしくはbで始まる単語をプリントする
+     * @param input テキスト入力
+     */
+    public static void outputWordsStartingWithB(String input) {
+        List<String> wordsStartingWithB = getWordsStartingWithB(input);
+        printList(wordsStartingWithB);
+    }
+    
+    /**
+     * テキストからBもしくはbで始まる単語を取得する
+     * @param input テキスト入力
+     * @return Bもしくはbで始まる単語のリスト
+     */
+    public static List<String> getWordsStartingWithB(String input) {
+        String[] words = input.split("\\s+");
+        Pattern pattern = Pattern.compile("^B", Pattern.CASE_INSENSITIVE);
+        List<String> results = new ArrayList<>();
+        
+        for (String word : words) {
+            Matcher matcher = pattern.matcher(word);
+            if (matcher.find()) {
+                results.add(word);
+            }
+        }
+        return results;
+    }
+    
+    /**
+     * Listの値をカンマで区切って並べてプリントする
+     * @param list リスト
+     */
+    public static void printList(List<String> list) {
+        System.out.println(String.join(",", list));
+    }
 }
+
